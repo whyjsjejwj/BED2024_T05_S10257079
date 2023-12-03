@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="Stylesheet.css">
+    <title>Samsung | Sign up for an account</title>
+
+    <script>
+        function validatePassword() {
+            var password = document.getElementById("password").value; /* retrieves the element in the id "password" */
+            var confirmPassword = document.getElementById("confirmPassword").value; /* retrieves the element in the id "confirmPassword" */
+
+            if (password !== confirmPassword) { /*checks if the password matches */
+                alert("Passwords do not match!");
+                return false;
+            }
+
+            return true;
+        }
+
+        function passwordRequirements() {
+            var password = document.getElementById("password").value;
+
+            if (password.length < 8 || !/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/.test(password)) { /* checks if the password meets the length OR if it met the regex pattern */
+                document.getElementById("error-message").innerHTML =
+                    "Password must meet the following requirements:<br>" +
+                    "At least one digit<br>" +
+                    "At least one lowercase letter<br>" +
+                    "At least one uppercase letter<br>" +
+                    "Minimum length of 8 characters";
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="logo-icon-container"> <!--samsung logo-->
+        <img class="logo" src="logo.jpg">
+    </div>
+
+    <div class="signup-container fonts">
+        <h2 class="signup-header">
+            Create an Account
+        </h2>
+
+        <form action="Index.html" method="GET" onsubmit="return validatePassword() && passwordRequirements()"> <!--once signed up, brings you to home (index) page-->
+            <div class="form-group fonts">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required> <!--email input-->
+            </div>
+
+            <div class="check fonts">
+                <input type="checkbox" id="remember" name="remember">
+                <label for="Remember">Remember my account</label> <!--if user wants their details to be remembered-->
+            </div>
+
+            <div class="smallspace"></div>
+
+            <div class="form-group fonts">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required> <!--password input-->
+            </div>
+
+            <div class="form-group fonts">
+                <label for="confirmPassword">Confirm password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required> <!--password confirmation input-->
+            </div>
+
+            <div id="error-message" class="error-message"></div> <!--error message for when the password does not meet the requirements-->
+            <div class="smallspace"></div>
+
+            <div class="form-group fonts">
+                <button type="submit">Sign Up</button> <!--sing-up button-->
+            </div>
+        </form>
+    </div>
+</body>
+</html>

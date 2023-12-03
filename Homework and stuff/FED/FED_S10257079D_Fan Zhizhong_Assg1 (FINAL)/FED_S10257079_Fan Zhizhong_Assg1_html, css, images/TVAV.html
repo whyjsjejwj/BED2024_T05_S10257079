@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang='en'>
+    <head>
+            
+        <title>Samsung | Great Television Deals!</title>
+        
+        <meta charset="utf-8">
+        <link rel="shortcut icon" href="icon.png" type="image/x-icon"> <!--samsung logo beside the title-->
+        <link rel="stylesheet" href="Stylesheet.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    </head>
+
+    <body>
+            <div class="logo-icon-container">
+                <img class="logo" src="logo.jpg"> <!--samsung logo-->
+                <div class="icon-container"> <!--for the icons on top right-->
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <a href="Signup.html" class="usersignup" ><i class="fa-solid fa-user"></i></a> <!--if user clicks on the profile icon, it brings them to sign-up page-->
+                </div>
+            </div>
+            
+            <div class="search-container"> <!--search bar-->
+                <input type="text" placeholder="Search" class="search-bar";>
+                <button class="search-button">Search</button>
+            </div>
+
+            <div><nav class="select"> <!--navigate to the different product types-->
+                <a href="Index.html">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="Mobile.html">Mobile</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="TVAV.html">TV & AV</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="Accessories.html">Accessories</a>
+            </nav></div>
+
+            <hr>
+
+            </div>
+
+            <!--slideshow for different products-->
+            <div class="slideshow-container"> 
+
+                <div class="mySlides">
+                    <img src="tv1.avif" alt="tv1">
+                    <div class="Slideshowtext">OUR LATEST</div>
+                </div>
+            
+                <div class="mySlides">
+                    <img src="tv2.avif" alt="tv2">
+                    <div class="Slideshowtext">BETTER GRAPHICS</div>
+                </div>
+            
+                <div class="mySlides">
+                    <img src="tv3.avif" alt="tv3">
+                    <div class="Slideshowtext">HIGHER RESOLUTION</div>
+                </div>
+
+                <div class="mySlides">
+                    <img src="tv4.avif" alt="tv4">
+                    <div class="Slideshowtext">PRODUCER RECOMMENDED</div>
+                </div>
+                <a class="prev" onclick="plusSlides(-1)">❮</a> <!--button to move to previous product-->
+                <a class="next" onclick="plusSlides(1)">❯</a> <!--button to move to next previous product-->
+
+            </div>
+            
+            <div style="text-align:center"> <!--the dots below the slideshow, to navigate through the slideshow-->
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+
+            <hr>
+
+            <div class="space"></div>
+            
+            <div class="fonts slideshow-text product-card2">
+                <p>
+                    RECOMMENDED TELEVISIONS THAT ARE VALUE FOR ITS PRICE
+                </p>
+            </div>
+
+            <div class="space"></div>
+
+            <!--different tv products-->
+            <div class="container-product"> 
+                <div class="product-card-long">
+                    <img class="product-image" src="tv5.avif" alt="S95C">
+                    <p class="product-desc">77" S95C 4K Smart TV</p>
+                    <ul class="product-desc2">
+                        <li>Samsung OLED Technology</li>
+                        <li>Neutral Quantum Processor 4K</li>
+                        <li>Slim One Connect</li>
+                    </ul>
+                    <p class="price">$10,499.00</p>
+                </div>
+
+                <div class="product-card-long">
+                    <img class="product-image" src="tv6.avif" alt="Q60C">
+                    <p class="product-desc">75" Q60C 4K Smart TV</p>
+                    <ul class="product-desc2">
+                        <li>100% Colour Volume</li>
+                        <li>Quantum HDR</li>
+                        <li>AirSlim</li>
+                    </ul>
+                    <p class="price">$2,799.00</p>
+                </div>
+
+                <div class="product-card-long">
+                    <img class="product-image" src="tv7.avif" alt="CU80">
+                    <p class="product-desc">75" CU80 4K Smart TV</p>
+                    <ul class="product-desc2">
+                        <li>Dynamic Crystal Colour</li>
+                        <li>AirSlim</li>
+                        <li>Crystal Processor 4K</li>
+                    </ul>
+                    <p class="price">$1599.00</p>
+                </div>
+
+                <div class="product-card-long">
+                    <img class="product-image" src="tv8.avif" alt="CU70">
+                    <p class="product-desc">75" CU70 4K Smart TV</p>
+                    <ul class="product-desc2">
+                        <li>PurColour</li>
+                        <li>Smart Hub</li>
+                        <li>Crystal Processor 4K</li>
+                    </ul>
+                    <p class="price">$1399.00</p>
+                </div>
+            </div>
+
+            <script>
+                let slideIndex = 1; /* initialise the slide index to 1 */
+                showSlides(slideIndex);
+        
+                function plusSlides(n) { /* display the initial set of slides */
+                    showSlides(slideIndex += n);
+                }
+        
+                function currentSlide(n) { /* allows users to navigate to previous or next slide */
+                    showSlides(slideIndex = n);
+                }
+        
+                function showSlides(n) { /* controls the display of slides */
+                    let i;
+                    let slides = document.getElementsByClassName("mySlides"); /* get the elements in class "mySlides" */
+                    let dots = document.getElementsByClassName("dot"); /* get the elements in class "dot" */
+                    if (n > slides.length) { slideIndex = 1; } /* if index is greater than no. of slides, set index to 1 */
+                    if (n < 1) { slideIndex = slides.length; } /* if index is lesser than 1, set it to last slide */
+                    for (i = 0; i < slides.length; i++) { /* hides all the slides */
+                        slides[i].style.display = "none";
+                    }
+                    for (i = 0; i < dots.length; i++) { /* removes the colour of the dot when mouse is hovered above */
+                        dots[i].className = dots[i].className.replace(" active", "");
+                    }
+                    slides[slideIndex - 1].style.display = "block"; /* displays the current slide */
+                    dots[slideIndex - 1].className += " active"; /* adds "active" class to the dot corresponding to the current slide */
+                }
+            
+            </script>
+        <div class="space"></div>
+    </body>
+
+            <footer>
+                <div class="footer-container removeOriginal">
+                    <div class="footericons"> <!--social media accounts of samsung-->
+                        <a href="https://www.facebook.com/SamsungSingapore/"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/samsungsg/?hl=en"><i class="fa-brands fa-instagram "></i></a>
+                        <a href="https://twitter.com/SamsungMobile?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://www.youtube.com/channel/UCWwgaK7x0_FR1goeSRazfsQ"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div class="footerNav"> <!--cannot navigate-->
+                    <ul>
+                        <li><p>News</p></li>
+                        <li><p>About</p></li>
+                        <li><p>Contact Us</p></li>
+                        <li><p>Our team</p></li>
+                    </ul>
+                </div>
+
+                <div class="footerbottom fonts">
+                    <p>Copyright&copy; 2023; Designed by <span class="designer">Zhizhong</span></p>
+                </div>
+            </footer>
+        
